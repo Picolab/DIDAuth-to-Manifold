@@ -30,3 +30,7 @@ For Google and GitHub this was fairly obvious, and their IDs didn't overlap (at 
 #### what QR Code to display for registering vs. login?
 
 For registering, it would be the invitation to connect.
+
+## a proof of concept
+
+(work in progress)[https://picolab.github.io/DIDAuth-to-Manifold/]
