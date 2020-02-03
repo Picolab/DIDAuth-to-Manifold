@@ -33,4 +33,4 @@ For registering, it would be the invitation to connect.
 
 ## a proof of concept
 
-(work in progress)[https://picolab.github.io/DIDAuth-to-Manifold/]
+[work in progress](https://picolab.github.io/DIDAuth-to-Manifold/)
