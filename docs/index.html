@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Manifold - Thing Management Platform</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  background-color: rgb(204,204,204,0.8);
+}
+    </style>
+  </head>
+  <body>
+    <div style="padding: 32px 16px;text-align: center;height:100%">
+      <img src="https://manifold.picolabs.io/static/media/manifold_logo.c18994c7.png" alt="Manifold logo">
+    </div>
+    <div style="background: #E4E5E6;text-align: center">
+      <img src="ManifoldBody.png" alt="brief explanataion">
+      <br clear="all">
+      <img src="https://try.connect.me/img/connectButton@3x.png" alt="connect with my digital wallet" style="width:450px;border:8px solid orange;border-radius:26px;cursor:pointer" onclick="var theDiv=document.getElementById('sign-in');theDiv.style.display='block'">
+      <br clear="all">
+      <img src="SignInWithG.png" alt="sign in with Google or GitHub">
+      <p style="font-family:Arial;font-size:0.875rem;color:#263238">Not working? Try enabling popups on your browser</p>
+      <p style="margin-top:1rem;font-family:Arial;font-size:12px;color:#0f86c1;padding-bottom:50px">
+Manifold is currently under heavy development. Many apps and features are still forthcoming
+      </p>
+    </div>
+    <div id="sign-in" class="modal" onclick="var theDiv=document.getElementById('sign-in');theDiv.style.display='none'">
+    <div style="border:2px solid black;background-color:white;width:30%;text-align:center;padding:20px;margin:10px 60% 10px 10%;font-family:Arial">
+      <img src="Manifold.png" alt="Manidfold logo" style="width:100px">
+      <br clear="all">
+      <p style="font-weight:bold">To begin managing your things with Manifold, please connect with us by scanning this QR Code using your mobile wallet.</p>
+      <p>This pop-up will close automatically when you connect from your digital wallet</p>
+      <div id="qrcode-here">
+        <img src="SampleQR.png" alt="sample QR Code">
+      </div>
+      <img src="https://try.connect.me/img/sovrinLogo.png" alt="Sovrin logo">
+    </div>
+    </div>
+  </body>
+</html>
