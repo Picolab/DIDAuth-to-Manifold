@@ -23,13 +23,21 @@ There are now four kinds of direct child picos (how many as of 2/3/20):
 
 For Google and GitHub this was fairly obvious, and their IDs didn't overlap (at least so far!).
 
+We will use a DID as the name of the Manifold owner pico. It will be the DID of the connection between the browser tab agent and the owner's mobile wallet.
+
+![Agents](https://picolab.github.io/DIDAuth-to-Manifold/agents.png)
+
 #### what agent to use on the Manifold side?
+
+The web page provided by `manifold.picolabs.io` will include an browser tab agent. This agent will have a connection to the owner's mobile wallet.
 
 #### how to let the UI know that a connection has been made?
 
+We will need to poll for the connection.
+
 #### what QR Code to display for registering vs. login?
 
-For registering, it would be the invitation to connect.
+For registering, it would be the invitation to connect, from the browser tab agent to the owner's mobile wallet.
 
 ## a proof of concept
 
