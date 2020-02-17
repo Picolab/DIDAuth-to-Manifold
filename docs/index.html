@@ -4,6 +4,16 @@
     <link rel="icon" href="manifoldlogo.png">
     <title>Manifold - Thing Management Platform</title>
     <meta charset="UTF-8">
+<script src="https://manifold.picolabs.io:9090/js/jquery-3.1.0.min.js"></script>
+<!-- thanks to Jerome Etienne http://jeromeetienne.github.io/jquery-qrcode/ -->
+<script type="text/javascript" src="https://manifold.picolabs.io:9090/js/jquery.qrcode.js"></script>
+<script type="text/javascript" src="https://manifold.picolabs.io:9090/js/qrcode.js"></script>
+<script type="text/javascript">
+$(function(){
+  var invitation = 'placeholder'
+  $("div#qrcode-here").qrcode({ text: invitation, foreground: "#000000" });
+});
+</script>
     <style type="text/css">
 html, body {
     margin: 0;
@@ -48,7 +58,6 @@ Manifold is currently under heavy development. Many apps and features are still 
       <p style="font-weight:bold">To begin managing your things with Manifold, please connect with us by scanning this QR Code using your mobile wallet.</p>
       <p>This pop-up will close automatically when you connect from your digital wallet</p>
       <div id="qrcode-here">
-        <img src="SampleQR.png" alt="sample QR Code">
       </div>
       <img src="https://try.connect.me/img/sovrinLogo.png" alt="Sovrin logo">
     </div>
