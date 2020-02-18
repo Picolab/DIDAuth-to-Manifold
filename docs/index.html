@@ -8,16 +8,14 @@
 <!-- thanks to Jerome Etienne http://jeromeetienne.github.io/jquery-qrcode/ -->
 <script type="text/javascript" src="https://manifold.picolabs.io:9090/js/jquery.qrcode.js"></script>
 <script type="text/javascript" src="https://manifold.picolabs.io:9090/js/qrcode.js"></script>
-<script type="text/javascript">
-$(function(){
-  var invitation = 'https://manifold.picolabs.io:9090/sky/cloud/4JYCqZ4jkcZ8APUnUCv5qV/org.sovrin.agent/html.html?c_i=eyJAdHlwZSI6ImRpZDpzb3Y6QnpDYnNOWWhNcmpIaXFaRFRVQVNIZztzcGVjL2Nvbm5lY3Rpb25zLzEuMC9pbnZpdGF0aW9uIiwibGFiZWwiOiJNYW5pZm9sZCBTU0kiLCJyZWNpcGllbnRLZXlzIjpbIkJFR0NmQXJFUXFVUnN1dGRYN3F6d2pDZkhOR1dicFNiVURDaVRWc242c1FGIl0sInNlcnZpY2VFbmRwb2ludCI6Imh0dHBzOi8vbWFuaWZvbGQucGljb2xhYnMuaW86OTA5MC9za3kvZXZlbnQvNEpZQ3FaNGprY1o4QVBVblVDdjVxVi9udWxsL3NvdnJpbi9uZXdfbWVzc2FnZSIsInJvdXRpbmdLZXlzIjpbIjlaYXR4M3BYZ1NCYUFEbnJGQnZMVHVzY0NESm1xTW1Lc0pjVXBtRW5qY3hBIl19'
-  $("div#qrcode-here").qrcode({ text: invitation, foreground: "#000000" });
-});
-</script>
     <style type="text/css">
 html, body {
     margin: 0;
     padding: 0;
+}
+div#qrcode-here canvas {
+  border:1px dashed silver;
+  padding:5px;
 }
 .modal {
   position: fixed;
@@ -62,5 +60,13 @@ Manifold is currently under heavy development. Many apps and features are still 
       <img src="https://try.connect.me/img/sovrinLogo.png" alt="Sovrin logo">
     </div>
     </div>
+<script src="https://manifold.picolabs.io/pico-engine.js" type="text/javascript"></script>
+<script src="index.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+  var invitation = 'https://manifold.picolabs.io:9090/sky/cloud/4JYCqZ4jkcZ8APUnUCv5qV/org.sovrin.agent/html.html?c_i=eyJAdHlwZSI6ImRpZDpzb3Y6QnpDYnNOWWhNcmpIaXFaRFRVQVNIZztzcGVjL2Nvbm5lY3Rpb25zLzEuMC9pbnZpdGF0aW9uIiwibGFiZWwiOiJNYW5pZm9sZCBTU0kiLCJyZWNpcGllbnRLZXlzIjpbIkJFR0NmQXJFUXFVUnN1dGRYN3F6d2pDZkhOR1dicFNiVURDaVRWc242c1FGIl0sInNlcnZpY2VFbmRwb2ludCI6Imh0dHBzOi8vbWFuaWZvbGQucGljb2xhYnMuaW86OTA5MC9za3kvZXZlbnQvNEpZQ3FaNGprY1o4QVBVblVDdjVxVi9udWxsL3NvdnJpbi9uZXdfbWVzc2FnZSIsInJvdXRpbmdLZXlzIjpbIjlaYXR4M3BYZ1NCYUFEbnJGQnZMVHVzY0NESm1xTW1Lc0pjVXBtRW5qY3hBIl19'
+  $("div#qrcode-here").qrcode({ text: invitation, foreground: "#000000" });
+});
+</script>
   </body>
 </html>
