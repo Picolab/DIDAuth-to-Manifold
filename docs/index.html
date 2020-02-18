@@ -32,7 +32,25 @@ div#qrcode-here canvas {
   outline: 0;
   background-color: rgb(204,204,204,0.8);
 }
+.hide-until-needed input { display: none; }
+.hide-until-needed button { opacity: 0; }
+.hide-until-needed:hover button { opacity: 1; cursor: pointer; }
     </style>
+    <script src="https://manifold.picolabs.io:9090/js/handlebars.min.js" type="text/javascript"></script>
+    <script id="agent-template" type="text/x-handlebars-template">
+      <img src="Manifold.png" alt="Manidfold logo" style="width:100px">
+      <br clear="all">
+      <p style="font-weight:bold">To begin managing your things with Manifold, please connect with us by scanning this QR Code using your mobile wallet.</p>
+      <p>This pop-up will close automatically when you connect from your digital wallet</p>
+      <div id="qrcode-here">
+      </div>
+      <img src="https://try.connect.me/img/sovrinLogo.png" alt="Sovrin logo">
+      <br clear="all">
+      <div class="hide-until-needed">
+        <input id="inviteVia" value="{{ui.routerUI.invitationViaRouter}}">
+        <button type="button" onclick="event.stopPropagation();$('#inviteVia').select();document.execCommand('copy')">Copy</button>
+      </div>
+    </script>
   </head>
   <body>
     <div style="padding: 32px 16px;text-align: center;height:100%">
@@ -50,23 +68,16 @@ Manifold is currently under heavy development. Many apps and features are still 
       </p>
     </div>
     <div id="sign-in" class="modal" onclick="var theDiv=document.getElementById('sign-in');theDiv.style.display='none'">
-    <div style="border:2px solid black;background-color:white;width:30%;text-align:center;padding:20px;margin:10px 60% 10px 10%;font-family:Arial">
-      <img src="Manifold.png" alt="Manidfold logo" style="width:100px">
-      <br clear="all">
-      <p style="font-weight:bold">To begin managing your things with Manifold, please connect with us by scanning this QR Code using your mobile wallet.</p>
-      <p>This pop-up will close automatically when you connect from your digital wallet</p>
-      <div id="qrcode-here">
-      </div>
-      <img src="https://try.connect.me/img/sovrinLogo.png" alt="Sovrin logo">
+    <div id="section" style="border:2px solid black;background-color:white;width:30%;text-align:center;padding:20px;margin:10px 60% 10px 10%;font-family:Arial">
+    <p>Loading...</p>
     </div>
     </div>
 <script src="https://manifold.picolabs.io/pico-engine.js" type="text/javascript"></script>
 <script src="index.js" type="text/javascript"></script>
 <script type="text/javascript">
-$(function(){
-  var invitation = 'https://manifold.picolabs.io:9090/sky/cloud/4JYCqZ4jkcZ8APUnUCv5qV/org.sovrin.agent/html.html?c_i=eyJAdHlwZSI6ImRpZDpzb3Y6QnpDYnNOWWhNcmpIaXFaRFRVQVNIZztzcGVjL2Nvbm5lY3Rpb25zLzEuMC9pbnZpdGF0aW9uIiwibGFiZWwiOiJNYW5pZm9sZCBTU0kiLCJyZWNpcGllbnRLZXlzIjpbIkJFR0NmQXJFUXFVUnN1dGRYN3F6d2pDZkhOR1dicFNiVURDaVRWc242c1FGIl0sInNlcnZpY2VFbmRwb2ludCI6Imh0dHBzOi8vbWFuaWZvbGQucGljb2xhYnMuaW86OTA5MC9za3kvZXZlbnQvNEpZQ3FaNGprY1o4QVBVblVDdjVxVi9udWxsL3NvdnJpbi9uZXdfbWVzc2FnZSIsInJvdXRpbmdLZXlzIjpbIjlaYXR4M3BYZ1NCYUFEbnJGQnZMVHVzY0NESm1xTW1Lc0pjVXBtRW5qY3hBIl19'
-  $("div#qrcode-here").qrcode({ text: invitation, foreground: "#000000" });
-});
+$('#section').on('handlebars:done',function(){
+  $('div#qrcode-here').qrcode({ text: $('#inviteVia').val(), foreground: '#000000' })
+})
 </script>
   </body>
 </html>

@@ -175,6 +175,7 @@ async function main(){
       agentUI.disabled = true
     }
     $theSection.html(agentTemplate(agentUI))
+    $theSection.trigger('handlebars:done')
     $theSection.find('.js-ajax-link').click(async function (e) {
       e.preventDefault()
       var href = $(this).attr('href')
