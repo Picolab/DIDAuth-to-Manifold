@@ -108,7 +108,7 @@ var poll_setup = function(){
           document.removeEventListener('visibilitychange', poll_setup, false)
           document.removeEventListener('mouseover', poll_setup, false)
           $('#sec').closest('p').html('')
-          if(confirm('go on?')) window.open('manifold.html','manifold')
+          window.open('manifold.html','manifold')
         } else {
           f1 = f2
           f2 = sec
