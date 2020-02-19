@@ -28,14 +28,14 @@ p.menu {
     <script id="agent-template" type="text/x-handlebars-template">
     {{#if ui.connections}}
       <div class="topside">
-      <p style="float:right;margin-right:10px">Owner name</p>
+      <p id="ownername" style="float:right;margin-right:10px">Owner name</p>
       <img src="manifoldtopleft.png" alt="masthead">
       </div>
       <div class="topside">
       <p class="menu"><span style="color:#33ACD7">Home</span>&nbsp; /&nbsp; My Things</p>
       </div>
       {{#each ui.connections}}
-        <p>You have an owner pico named {{their_did}} for {{label}}</p>
+        <p>You have an owner pico named {{their_did}} for <span class="ownerlabel">{{label}}</span></p>
       {{/each}}
     {{else}}
       <a href="index.html">register or login</a>
@@ -49,6 +49,9 @@ p.menu {
 <script src="https://manifold.picolabs.io/pico-engine.js" type="text/javascript"></script>
 <script src="index.js" type="text/javascript"></script>
 <script type="text/javascript">
+$('#section').on('handlebars:done',function(){
+  $('#ownername').html($('.ownerlabel').first().html())
+})
 </script>
   </body>
 </html>
