@@ -103,9 +103,7 @@ var poll_setup = function(){
   var f2 = 0
   var poll = function(sec){
     $('#sec').text(sec==1 ? "1 second" : sec + " seconds")
-    timer = setTimeout(function(){
-      pe.runQuery({eci:agentECI,rid:'org.sovrin.agent',name:'ui'})
-      .then(function(ui){
+    var handleTimeout = function(ui){
         if(ui && ui.connections && ui.connections.length) {
           document.removeEventListener('visibilitychange', poll_setup, false)
           document.removeEventListener('mouseover', poll_setup, false)
@@ -116,7 +114,12 @@ var poll_setup = function(){
           var fn = f1 + f2
           if (!document.hidden && fn<86400) poll(fn)
         }
-      })
+      }
+    var pollEvent = {eci:agentECI,eid:'poll_router',domain:'edge',type:'poll_all_needed'}
+    var pollQuery = {eci:agentECI,rid:'org.sovrin.agent',name:'ui'}
+    timer = setTimeout(function(){
+      pe.signalEvent(pollEvent).then(function(){
+        pe.runQuery(pollQuery).then(handleTimeout)})
     },sec*1000)
   }
   poll(1)
