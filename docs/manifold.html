@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Manifold - Thing Management</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="manifoldlogo.png">
+    <script src="https://manifold.picolabs.io:9090/js/jquery-3.1.0.min.js"></script>
+    <style type="text/css">
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #E4E5E6;
+}
+div.topside {
+  background-color: white;
+  border-bottom: 1px solid  #CFDBD6;
+  padding: 1px 0;
+}
+p {
+  font-family: Arial;
+  color: #B6C2C9;
+}
+p.menu {
+  margin-left: 20px;
+}
+    </style>
+    <script src="https://manifold.picolabs.io:9090/js/handlebars.min.js" type="text/javascript"></script>
+    <script id="agent-template" type="text/x-handlebars-template">
+    {{#if ui.connections}}
+      <div class="topside">
+      <p style="float:right;margin-right:10px">Owner name</p>
+      <img src="manifoldtopleft.png" alt="masthead">
+      </div>
+      <div class="topside">
+      <p class="menu"><span style="color:#33ACD7">Home</span>&nbsp; /&nbsp; My Things</p>
+      </div>
+      {{#each ui.connections}}
+        <p>You have an owner pico named {{their_did}} for {{label}}</p>
+      {{/each}}
+    {{else}}
+      <a href="index.html">register or login</a>
+    {{/if}}
+    </script>
+  </head>
+  <body>
+    <div id="section">
+    <p title="This shouldn't take longer than three seconds">Loading...</p>
+    </div>
+<script src="https://manifold.picolabs.io/pico-engine.js" type="text/javascript"></script>
+<script src="index.js" type="text/javascript"></script>
+<script type="text/javascript">
+</script>
+  </body>
+</html>
