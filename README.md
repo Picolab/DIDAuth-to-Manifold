@@ -42,3 +42,6 @@ For registering, it would be the invitation to connect, from the browser tab age
 ## a proof of concept
 
 [work in progress](https://picolab.github.io/DIDAuth-to-Manifold/)
+
+[slides](https://docs.google.com/presentation/d/1d__yVgGewLzOVV8Kt1JrSy8y85Wy1DO61PCAR6sOcsw/edit?usp=sharing)
+
