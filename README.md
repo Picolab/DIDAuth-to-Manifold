@@ -25,7 +25,7 @@ For Google and GitHub this was fairly obvious, and their IDs didn't overlap (at 
 
 We will use a DID as the name of the Manifold owner pico. It will be the DID of the connection between the browser tab agent and the owner's mobile wallet.
 
-![Agent connections](https://picolab.github.io/DIDAuth-to-Manifold/agents.png)
+![Agent connections](https://picolab.github.io/DIDAuth-to-Manifold/connection.png)
 
 #### what agent to use on the Manifold side?
 
