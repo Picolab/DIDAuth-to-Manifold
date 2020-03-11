@@ -29,7 +29,7 @@ We will use a DID as the name of the Manifold owner pico. It will be the DID of 
 
 #### what agent to use on the Manifold side?
 
-The web page provided by `manifold.picolabs.io` will include an browser tab agent. This agent will have a connection to the owner's mobile wallet.
+The web page provided by `manifold.picolabs.io` will include an browser tab agent. This agent will invite a connection to the owner's mobile wallet.
 
 #### how to let the UI know that a connection has been made?
 
